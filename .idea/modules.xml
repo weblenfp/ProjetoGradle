@@ -5,6 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/ProjetoGradle.iml" filepath="$PROJECT_DIR$/ProjetoGradle.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/backend/backend.iml" filepath="$PROJECT_DIR$/backend/backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jokesJavaLibrary/jokesJavaLibrary.iml" filepath="$PROJECT_DIR$/jokesJavaLibrary/jokesJavaLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jokesAndroidLibrary/jokesandroidlibrary.iml" filepath="$PROJECT_DIR$/jokesAndroidLibrary/jokesandroidlibrary.iml" />
     </modules>
   </component>
 </project>

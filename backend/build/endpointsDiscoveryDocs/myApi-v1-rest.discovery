@@ -8,8 +8,8 @@
    }
   }
  },
- "basePath": "/_ah/api/myApi/v1/sayHi/",
- "baseUrl": "https://myApplicationId.appspot.com/_ah/api/myApi/v1/sayHi/",
+ "basePath": "/_ah/api/myApi/v1/",
+ "baseUrl": "https://myApplicationId.appspot.com/_ah/api/myApi/v1/",
  "batchPath": "batch",
  "description": "This is an API",
  "discoveryVersion": "v1",
@@ -33,7 +33,18 @@
      "type": "string"
     }
    },
-   "path": "{name}",
+   "path": "sayHi/{name}",
+   "response": {
+    "$ref": "MyBean"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "sayJoke": {
+   "httpMethod": "GET",
+   "id": "myApi.sayJoke",
+   "path": "sayJoke",
    "response": {
     "$ref": "MyBean"
    },
@@ -98,11 +109,14 @@
    "properties": {
     "data": {
      "type": "string"
+    },
+    "joke": {
+     "type": "string"
     }
    },
    "type": "object"
   }
  },
- "servicePath": "myApi/v1/sayHi/",
+ "servicePath": "myApi/v1/",
  "version": "v1"
 }

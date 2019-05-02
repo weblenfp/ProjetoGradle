@@ -5,11 +5,14 @@
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../ud867-Gradle/FinalProject/gradle" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/backend" />
+            <option value="$PROJECT_DIR$/jokesAndroidLibrary" />
+            <option value="$PROJECT_DIR$/jokesJavaLibrary" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

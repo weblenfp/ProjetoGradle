@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/paid_version_label"/>
+
+    <TextView
+        android:id="@+id/joke_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="asdasd"
+        android:layout_margin="@dimen/tv_small_margin"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/button_load_joke"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/button_margin"
+        android:gravity="bottom"
+        android:text="@string/button_text"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textColor="@android:color/darker_gray" />
+
+</LinearLayout>
