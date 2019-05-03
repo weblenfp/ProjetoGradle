@@ -1,7 +1,7 @@
-package com.udacity.gradle.builditbigger.paid;
+package com.udacity.gradle.builditbigger.fragments;
 
-import android.app.Activity;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,18 +9,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.udacity.gradle.builditbigger.R;
 import com.udacity.gradle.builditbigger.utils.SourcePrefs;
-import com.udacity.gradle.builditbigger.api.AsyncTask;
+
+import java.util.concurrent.ExecutionException;
 
 import dev.weblen.jokesandroidlibrary.JokesActivity;
 import dev.weblen.jokesjavalibrary.Jokes;
 
-import java.util.concurrent.ExecutionException;
-
 public class MainActivityFragment extends Fragment {
     private static final String ARG_JOKE_TEXT = "JOKE_TEXT";
     private static final int ACTIVITY_REQUEST_CODE = 123;
+    private static final String ERROR_MESSAGE = "Error. Try again";
 
     public static MainActivityFragment newInstance() {
         Bundle args = new Bundle();
@@ -53,9 +56,14 @@ public class MainActivityFragment extends Fragment {
                         MainActivityFragment.this.getActivity().startActivityForResult(intentStartJokeLibActivity, ACTIVITY_REQUEST_CODE);
                         break;
                     case SourcePrefs.GAE_SOURCE:
-                        AsyncTask task = new AsyncTask();
+                        AsyncTask task = new AsyncTask() {
+                            @Override
+                            protected Object doInBackground(Object[] objects) {
+                                return null;
+                            }
+                        };
                         try {
-                            String GAEjoke = task.execute().get();
+                            String GAEjoke = (String) task.execute().get();
                             ((TextView) MainActivityFragment.this.getActivity().findViewById(R.id.joke_tv)).setText(GAEjoke);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
@@ -66,6 +74,14 @@ public class MainActivityFragment extends Fragment {
                 }
             }
         });
+
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .build();
+
+        AdView mAdView = rootView.findViewById(R.id.adView);
+        mAdView.loadAd(adRequest);
+
         return rootView;
     }
 
@@ -76,13 +92,11 @@ public class MainActivityFragment extends Fragment {
     }
 
     private void init(Bundle savedInstanceState) {
-        Activity activity = this.getActivity();
-
         if (savedInstanceState != null) {
             String currJoke = savedInstanceState.getString(ARG_JOKE_TEXT);
-            ((TextView) activity.findViewById(R.id.joke_tv)).setText(currJoke);
+            ((TextView) getActivity().findViewById(R.id.joke_tv)).setText(currJoke);
         } else {
-            ((TextView) activity.findViewById(R.id.joke_tv)).setText(Jokes.getJoke());
+            ((TextView) getActivity().findViewById(R.id.joke_tv)).setText(Jokes.getJoke());
         }
     }
 
