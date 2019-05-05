@@ -20,6 +20,7 @@ import java.util.concurrent.ExecutionException;
 import dev.weblen.jokesandroidlibrary.JokesActivity;
 import dev.weblen.jokesjavalibrary.Jokes;
 
+@SuppressWarnings("unchecked")
 public class MainActivityFragment extends Fragment {
     private static final String ARG_JOKE_TEXT = "JOKE_TEXT";
     private static final int ACTIVITY_REQUEST_CODE = 123;

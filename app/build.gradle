@@ -11,13 +11,12 @@ buildscript {
 }
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion "26.0.3"
+    compileSdkVersion 26
 
     defaultConfig {
         applicationId "com.udacity.gradle.builditbigger"
         minSdkVersion 23
-        targetSdkVersion 28
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
@@ -54,30 +53,17 @@ dependencies {
     implementation project(':jokesJavaLibrary')
     implementation project(':jokesandroidlibrary')
 
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.google.android.gms:play-services-ads:17.2.0'
+    implementation 'com.android.support:appcompat-v7:26.0.0'
+
+    implementation 'com.google.android.gms:play-services-ads:17.1.3'
+
     implementation 'com.google.api-client:google-api-client:1.23.0'
     implementation 'com.google.http-client:google-http-client-android:1.23.0'
     implementation 'com.google.code.findbugs:jsr305:3.0.2'
 
-    // Testing
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-intents:3.0.1'
-    androidTestImplementation('com.android.support.test.espresso:espresso-contrib:3.0.1') {
 
-        exclude group: 'com.android.support', module: 'appcompat'
-        exclude group: 'com.android.support', module: 'support-v4'
-        exclude group: 'com.android.support', module: 'support-annotations'
-        exclude module: 'recyclerview-v7'
-    }
     androidTestImplementation 'junit:junit:4.12'
 
-
     //App's dependencies, including test
-    compile 'com.android.support:support-annotations:22.2.0'
-
-
-    testCompile 'junit:junit:4.12'
+    implementation 'com.android.support:support-annotations:22.2.0'
 }
