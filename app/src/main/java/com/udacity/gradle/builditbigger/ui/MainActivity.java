@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             case SourcePrefs.ANDROID_LIBRARY_SOURCE:
                 menuItemAndroidLibrary.setChecked(true);
                 break;
-            case SourcePrefs.GAE_SOURCE:
+            case SourcePrefs.GCE_SOURCE:
                 menuItemGoogleAppEngine.setChecked(true);
                 break;
         }
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 SourcePrefs.saveJokeFetchType(this, SourcePrefs.ANDROID_LIBRARY_SOURCE);
                 break;
             case R.id.action_google_app_engine:
-                SourcePrefs.saveJokeFetchType(this, SourcePrefs.GAE_SOURCE);
+                SourcePrefs.saveJokeFetchType(this, SourcePrefs.GCE_SOURCE);
                 break;
         }
         return super.onOptionsItemSelected(item);

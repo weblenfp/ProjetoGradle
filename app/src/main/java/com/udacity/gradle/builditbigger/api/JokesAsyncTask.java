@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import static com.udacity.gradle.builditbigger.api.APIConnector.getJokeFromApi;
 
-public class AsyncTask extends android.os.AsyncTask<Void, Void, String> {
+public class JokesAsyncTask extends android.os.AsyncTask<Void, Void, String> {
         private static final String ERROR_MESSAGE = "Error. Try again";
 
         protected String doInBackground(Void... voids) {

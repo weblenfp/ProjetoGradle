@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.udacity.gradle.builditbigger.R;
+import com.udacity.gradle.builditbigger.api.JokesAsyncTask;
 import com.udacity.gradle.builditbigger.utils.SourcePrefs;
 
 import java.util.concurrent.ExecutionException;
@@ -53,16 +54,11 @@ public class MainActivityFragment extends Fragment {
                         intentStartJokeLibActivity.putExtra(JokesActivity.ARG_JOKE_RECEIVED, Jokes.getJoke());
                         MainActivityFragment.this.getActivity().startActivityForResult(intentStartJokeLibActivity, ACTIVITY_REQUEST_CODE);
                         break;
-                    case SourcePrefs.GAE_SOURCE:
-                        AsyncTask task = new AsyncTask() {
-                            @Override
-                            protected Object doInBackground(Object[] objects) {
-                                return null;
-                            }
-                        };
+                    case SourcePrefs.GCE_SOURCE:
+                        JokesAsyncTask task = new JokesAsyncTask();
                         try {
-                            String GAEjoke = (String) task.execute().get();
-                            ((TextView) MainActivityFragment.this.getActivity().findViewById(R.id.joke_tv)).setText(GAEjoke);
+                            String GAEjoke = task.execute().get();
+                            ((TextView) getActivity().findViewById(R.id.joke_tv)).setText(GAEjoke);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         } catch (ExecutionException e) {

@@ -1,7 +1,6 @@
 package com.udacity.gradle.builditbigger.fragments;
 
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -13,6 +12,7 @@ import android.widget.TextView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.udacity.gradle.builditbigger.R;
+import com.udacity.gradle.builditbigger.api.JokesAsyncTask;
 import com.udacity.gradle.builditbigger.utils.SourcePrefs;
 
 import java.util.concurrent.ExecutionException;
@@ -22,12 +22,11 @@ import dev.weblen.jokesjavalibrary.Jokes;
 
 @SuppressWarnings("unchecked")
 public class MainActivityFragment extends Fragment {
-    private static final String ARG_JOKE_TEXT = "JOKE_TEXT";
-    private static final int ACTIVITY_REQUEST_CODE = 123;
-    private static final String ERROR_MESSAGE = "Error. Try again";
+    private static final String ARG_JOKE_TEXT         = "JOKE_TEXT";
+    private static final int    ACTIVITY_REQUEST_CODE = 123;
 
     public static MainActivityFragment newInstance() {
-        Bundle args = new Bundle();
+        Bundle               args     = new Bundle();
         MainActivityFragment fragment = new MainActivityFragment();
         fragment.setArguments(args);
         return fragment;
@@ -56,16 +55,11 @@ public class MainActivityFragment extends Fragment {
                         intentStartJokeLibActivity.putExtra(JokesActivity.ARG_JOKE_RECEIVED, Jokes.getJoke());
                         MainActivityFragment.this.getActivity().startActivityForResult(intentStartJokeLibActivity, ACTIVITY_REQUEST_CODE);
                         break;
-                    case SourcePrefs.GAE_SOURCE:
-                        AsyncTask task = new AsyncTask() {
-                            @Override
-                            protected Object doInBackground(Object[] objects) {
-                                return null;
-                            }
-                        };
+                    case SourcePrefs.GCE_SOURCE:
+                        JokesAsyncTask task = new JokesAsyncTask();
                         try {
-                            String GAEjoke = (String) task.execute().get();
-                            ((TextView) MainActivityFragment.this.getActivity().findViewById(R.id.joke_tv)).setText(GAEjoke);
+                            String GAEjoke = task.execute().get();
+                            ((TextView) getActivity().findViewById(R.id.joke_tv)).setText(GAEjoke);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         } catch (ExecutionException e) {

@@ -4,13 +4,13 @@ import android.os.AsyncTask;
 
 import java.util.concurrent.CountDownLatch;
 
-import static com.udacity.gradle.builditbigger.api.GCPConnector.getJokeFromApi;
+import static com.udacity.gradle.builditbigger.api.GCEConnector.getJokeFromApi;
 
-public class AsyncTaskRobust extends AsyncTask<Void, Void, String> {
+public class JokesAsyncTaskGCE extends AsyncTask<Void, Void, String> {
     private static final String         ERROR_MESSAGE = "Error. Try again";
     private              CountDownLatch countDownLatch;
 
-    public AsyncTaskRobust(CountDownLatch countDownLatch){
+    public JokesAsyncTaskGCE(CountDownLatch countDownLatch){
         this.countDownLatch = countDownLatch;
     }
 

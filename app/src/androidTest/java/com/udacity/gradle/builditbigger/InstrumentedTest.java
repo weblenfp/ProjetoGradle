@@ -3,8 +3,8 @@ package com.udacity.gradle.builditbigger;
 import android.test.suitebuilder.annotation.LargeTest;
 import android.text.TextUtils;
 
-import com.udacity.gradle.builditbigger.api.AsyncTask;
-import com.udacity.gradle.builditbigger.api.AsyncTaskRobust;
+import com.udacity.gradle.builditbigger.api.JokesAsyncTask;
+import com.udacity.gradle.builditbigger.api.JokesAsyncTaskGCE;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,7 +25,7 @@ public class InstrumentedTest {
 
     @Test
     public void testDoInBackground() throws Exception {
-        String joke = new AsyncTask().execute().get();
+        String joke = new JokesAsyncTask().execute().get();
         Thread.sleep(10000);
         assertFalse("Error: Fetched Joke = " + joke, TextUtils.equals(joke,ERROR_MESSAGE));
     }
@@ -33,7 +33,7 @@ public class InstrumentedTest {
     @Test
     public void testDoInBackgroundRobust() throws Exception {
         final CountDownLatch signal = new CountDownLatch(1);
-        String               joke   = new AsyncTaskRobust(signal).execute().get();
+        String               joke   = new JokesAsyncTaskGCE(signal).execute().get();
         signal.await();
         assertFalse("Error: Fetched Joke = " + joke, TextUtils.equals(joke, ERROR_MESSAGE));
     }
