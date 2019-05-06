@@ -2,9 +2,9 @@
 <html>
 <head>
     <title>Hello, Endpoints!</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet"
-          href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css"
+          rel="stylesheet">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 </head>
@@ -17,7 +17,7 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Documentation <b
                             class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="https://developers.google.com/appengine/docs/java/">Google App
@@ -41,7 +41,7 @@
     <!--
       Output from Endpoints API call.
     -->
-    <div class="alert alert-success" style="visibility: collapse;" id="outputAlert"></div>
+    <div class="alert alert-success" id="outputAlert" style="visibility: collapse;"></div>
 
     <!--
       A form that takes a text value and submits it to the Endpoint,
@@ -55,11 +55,11 @@
                     API.</p>
                 <form>
                     <div class="input-group">
-                        <input type="text" class="form-control input-lg" placeholder="Name"
-                               id="nameInput"/>
+                        <input class="form-control input-lg" id="nameInput" placeholder="Name"
+                               type="text"/>
                         <span class="input-group-btn">
                              <button class="btn btn-default btn-primary btn-group btn-lg"
-                                     type="submit" id="helloButton">Say "Hello" &raquo;</button>
+                                     id="helloButton" type="submit">Say "Hello" &raquo;</button>
                           </span>
                     </div>
                 </form>
@@ -124,6 +124,7 @@
       }
       gapi.client.load(apiName, apiVersion, callback, apiRoot);
     }
+
 
 </script>
 <!--

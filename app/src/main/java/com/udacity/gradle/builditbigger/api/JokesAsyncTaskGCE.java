@@ -10,7 +10,7 @@ public class JokesAsyncTaskGCE extends AsyncTask<Void, Void, String> {
     private static final String         ERROR_MESSAGE = "Error. Try again";
     private              CountDownLatch countDownLatch;
 
-    public JokesAsyncTaskGCE(CountDownLatch countDownLatch){
+    public JokesAsyncTaskGCE(CountDownLatch countDownLatch) {
         this.countDownLatch = countDownLatch;
     }
 
@@ -20,8 +20,7 @@ public class JokesAsyncTaskGCE extends AsyncTask<Void, Void, String> {
         } catch (Exception e) {
             e.printStackTrace();
             return ERROR_MESSAGE;
-        }
-        finally {
+        } finally {
             countDownLatch.countDown();
         }
     }

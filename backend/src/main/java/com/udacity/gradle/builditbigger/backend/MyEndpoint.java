@@ -8,7 +8,9 @@ import javax.inject.Named;
 
 import dev.weblen.jokesjavalibrary.Jokes;
 
-/** An endpoint class we are exposing */
+/**
+ * An endpoint class we are exposing
+ */
 @Api(
         name = "myApi",
         version = "v1",
@@ -20,7 +22,9 @@ import dev.weblen.jokesjavalibrary.Jokes;
 )
 public class MyEndpoint {
 
-    /** A simple endpoint method that takes a name and says Hi back */
+    /**
+     * A simple endpoint method that takes a name and says Hi back
+     */
     @ApiMethod(name = "sayHi")
     public MyBean sayHi(@Named("name") String name) {
         MyBean response = new MyBean();
@@ -32,7 +36,7 @@ public class MyEndpoint {
     @ApiMethod(name = "sayJoke", httpMethod = ApiMethod.HttpMethod.GET)
     public MyBean sayJoke() {
         MyBean response = new MyBean();
-        response.setJoke(Jokes.getGAEJoke());
+        response.setJoke(Jokes.getGCEJoke());
         return response;
     }
 }

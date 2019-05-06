@@ -27,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         super.onPrepareOptionsMenu(menu);
-        MenuItem menuItemJavaLibrary = menu.findItem(R.id.action_java_library);
-        MenuItem menuItemAndroidLibrary = menu.findItem(R.id.action_android_library);
+        MenuItem menuItemJavaLibrary     = menu.findItem(R.id.action_java_library);
+        MenuItem menuItemAndroidLibrary  = menu.findItem(R.id.action_android_library);
         MenuItem menuItemGoogleAppEngine = menu.findItem(R.id.action_google_app_engine);
 
         menuItemJavaLibrary.setChecked(false);

@@ -58,8 +58,8 @@ public class MainActivityFragment extends Fragment {
                     case SourcePrefs.GCE_SOURCE:
                         JokesAsyncTask task = new JokesAsyncTask();
                         try {
-                            String GAEjoke = task.execute().get();
-                            ((TextView) getActivity().findViewById(R.id.joke_tv)).setText(GAEjoke);
+                            String GCEjoke = task.execute().get();
+                            ((TextView) getActivity().findViewById(R.id.joke_tv)).setText(GCEjoke);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         } catch (ExecutionException e) {

@@ -7,5 +7,5 @@
     <string name="load_joke_label">Load joke</string>
     <string name="set_source_to_java_library">Set source to Java library</string>
     <string name="set_source_to_android_library">Set source to Android library</string>
-    <string name="set_source_to_gae">Set source to GAE</string>
+    <string name="set_source_to_gce">Set source to GCE</string>
 </resources>
