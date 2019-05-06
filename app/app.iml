@@ -218,11 +218,5 @@
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-tasks:16.0.1@aar" level="project" />
     <orderEntry type="module" module-name="jokesandroidlibrary" />
     <orderEntry type="module" module-name="jokesJavaLibrary" />
-    <orderEntry type="module" module-name="jokesandroidlibrary" />
-    <orderEntry type="module" module-name="jokesJavaLibrary" />
-    <orderEntry type="module" module-name="jokesandroidlibrary" />
-    <orderEntry type="module" module-name="jokesJavaLibrary" />
-    <orderEntry type="module" module-name="jokesandroidlibrary" />
-    <orderEntry type="module" module-name="jokesJavaLibrary" />
   </component>
 </module>
