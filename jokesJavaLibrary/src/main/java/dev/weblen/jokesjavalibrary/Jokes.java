@@ -29,7 +29,11 @@ public class Jokes {
                     "De repente o marido se vira para esposa e pergunta:\n" +
                     "- Amor, o que você fazia antes de casar comigo?\n" +
                     "E a mulher, sem pensar duas vezes, responde:\n" +
-                    "Eu vivia!\n"
+                    "Eu vivia!\n",
+
+            "GCE\n" +
+                    "Quantos graus tem um leão morto?\n" +
+                    "R: 360 graus, pois ele é uma ex-fera."
     };
     private static final String[] JOKES     = {
             "Um homem rindo muito conta para o amigo:\n" +
@@ -47,7 +51,19 @@ public class Jokes {
             "Um homem no consultório de um psiquiatra:\n" +
                     "- Doutor, estou preocupado com minha esposa. Quando estou no trabalho, ela passa o dia conversando com o abajur!\n" +
                     "- Mas você a viu falando com o abajur? - pergunta o médico.\n" +
-                    "- Não, o abajur me contou e pediu segredo!!!\n"
+                    "- Não, o abajur me contou e pediu segredo!!!\n",
+
+            "Por que a mulher não pode ser eletricista?\n" +
+            "Porque ela leva 9 meses para dar a luz!\n",
+
+            "Por que os índios odeiam a Copa?\n" +
+            "Porque eles só vivem na reserva.\n",
+
+            "Querido, o que você mais prefere? Uma mulher bonita ou uma mulher inteligente?\n" +
+                    "- Nem uma, nem outra.. meu amor.. Você sabe que eu gosto só de você!\n",
+
+            "Por que os portugueses preocupados com a violência em São Paulo estão instalando para-raios no teto do carro?\n" +
+                    "R: Para evitar os sequestro relâmpago!"
     };
 
     public static void main(String[] args) {
