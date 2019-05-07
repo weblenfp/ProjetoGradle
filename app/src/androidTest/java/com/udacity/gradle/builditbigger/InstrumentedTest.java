@@ -1,5 +1,6 @@
 package com.udacity.gradle.builditbigger;
 
+import android.content.res.Resources;
 import android.text.TextUtils;
 
 import com.udacity.gradle.builditbigger.api.JokesAsyncTask;
@@ -13,7 +14,7 @@ import static junit.framework.Assert.assertFalse;
 @RunWith(JUnit4.class)
 public class InstrumentedTest {
 
-    private static final String ERROR_MESSAGE = "Error. Try again";
+    String ERROR_MESSAGE = Resources.getSystem().getString(android.R.string.httpErrorBadUrl);
 
     public InstrumentedTest() {
     }

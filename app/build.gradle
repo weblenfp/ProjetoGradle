@@ -59,6 +59,11 @@ android {
         exclude 'META-INF/notice.txt'
         exclude 'META-INF/ASL2.0'
     }
+    sourceSets {
+        free {
+            manifest.srcFile 'src/free/AndroidManifest.xml'
+        }
+    }
 }
 
 dependencies {
@@ -85,7 +90,7 @@ dependencies {
 
     //App's dependencies, including test
     implementation 'com.android.support:support-annotations:22.2.0'
-    implementation 'com.google.firebase:firebase-ads:17.2.0'
+    freeImplementation 'com.google.firebase:firebase-ads:17.2.0'
 
     endpointsServer project(path: ':backend', configuration: 'endpoints')
     implementation 'com.google.api-client:google-api-client:+'
